@@ -1,34 +1,35 @@
-<?php
+<?php 
    
-  // Message Vars
-  $msg = '';
-  $msgClass = '';
+//Message Vars
+$msg = '';
+$msgClass = '';
 
-  if(filter_has_var(INPUT_POST, 'submit')) {
-    // Get Form Data
-    $mail = htmlspecialchars($_POST['mail']);
+if(filter_has_var(INPUT_POST, 'submit')) {
+  //Get Form Data
+  $mail = htmlspecialchars($_POST['mail']);
 
-    //Check Required Fields
-    if(!empty($mail)) {
-      // Passed Check email
-      include_once 'assets/php/dbh.inc.php';
+  //Check Required Fields
+  if(!empty($mail)) {
+    //Passed Check email
+    include_once 'assets/php/dbh.inc.php';
 
-      $mail = $_POST['mail'];
+    $mail = $_POST['mail'];
 
-      $sql = "INSERT INTO email (user_email) VALUES ('$mail');";
-      mysqli_query($conn, $sql);
+    $sql = "INSERT INTO email (user_email) VALUES ('$mail');";
+    mysqli_query($conn, $sql);
 
-      $msg = 'Registration Successful!';
-      $msgClass = 'alert-success';
-      
-    } else {
-      // Failed
-      $msg = 'Please enter an email';
-      $msgClass = 'alert-danger';
-    }
-
+    $msg = 'Registration Successful!';
+    $msgClass = 'alert-success';
+    
+  } else {
+    Failed
+    $msg = 'Please enter an email';
+    $msgClass = 'alert-danger';
   }
-?>
+
+}
+?> 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +79,7 @@
           <li><a class="nav-link scrollto active " href="index.php">Home</a></li>
           <li><a class="nav-link scrollto " href="about.php">About</a></li>
           <li><a class="nav-link scrollto" href="services.php">Services</a></li>
-          <li><a class="nav-link scrollto" href="team.php">Team</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="contact-us.php">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -312,13 +313,13 @@
             <div class="section-title">
                <span>Team</span>
                <h2>Team</h2>
-               <p>These are the people that make the magic happen</p>
+               <p>These are the people that make the magic happen.</p>
             </div>
 
             <div class="row justify-content-around">
                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="member">
-                     <img src="assets/img/team/team-1.jpg" alt="Abdullah's picture">
+                     <img src="assets/img/team/team-1.jpg" alt="Abdullah's picture" class="teams-img">
                      <h4>Abdullah Shaikh</h4>
                      <span>Co-Founder</span>
                      <div class="social">
@@ -332,7 +333,7 @@
                           
                   <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                      <div class="member">
-                        <img src="assets/img/team/team-2.jpg" alt="Burhan's picture">
+                        <img src="assets/img/team/team-2.jpg" alt="Burhan's picture" class="teams-img">
                         <h4>Burhan Petiwala</h4>
                         <span>Co-Founder</span>
                         <div class="social">
